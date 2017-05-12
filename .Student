@@ -1,0 +1,87 @@
+package org.lanqiao.schoolmanager;
+
+public class Student extends User{
+//	学生属性
+	private String major;
+	private String classId;
+	private String hobby;
+	private String stuIdCard;
+//学生选课数组，学生借书数组，学生好友数组
+	Book[] stuBook = new Book[5];//学生书籍
+	Course[] stuCour = new Course[3];//学生的课程
+	Student[] stuFriend = new Student[3];//学生的好友
+	
+	
+	
+	
+	public Student[] getStuFriend() {
+		return stuFriend;
+	}
+	public void setStuFriend(Student[] stuFriend) {
+		this.stuFriend = stuFriend;
+	}
+	public String getStuIdCard() {
+		return stuIdCard;
+	}
+	public void setStuIdCard(String stuIdCard) {
+		this.stuIdCard = stuIdCard;
+	}
+	public Book[] getStuBook() {
+		return stuBook;
+	}
+	public void setStuBook(Book[] stuBook) {
+		this.stuBook = stuBook;
+	}
+	public Course[] getStuCour() {
+		return stuCour;
+	}
+	public void setStuCour(Course[] stuCour) {
+		this.stuCour = stuCour;
+	}
+	public String getMajor() {
+		return major;
+	}
+	public void setMajor(String major) {
+		this.major = major;
+	}
+	public String getClassId() {
+		return classId;
+	}
+	public void setClassId(String classId) {
+		this.classId = classId;
+	}
+	public String getHobby() {
+		return hobby;
+	}
+	public void setHobby(String hobby) {
+		this.hobby = hobby;
+	}
+
+//	构造方法
+	public Student(String name, int age, String sex, int id, String pwd, String adress, String phone, String major,
+			String classId, String hobby, String stuIdCard) {
+		super(name, age, sex, id, pwd, adress, phone);
+		this.major = major;
+		this.classId = classId;
+		this.hobby = hobby;
+		this.stuIdCard = stuIdCard;
+	}
+	
+	public Student() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public String toString() {
+		return getName() +"\t"+ getAge()+"\t" +  getSex()+"\t" + getId()+"\t"+ getAdress()+"\t" + getPhone()+"\t"+major +"\t"+ classId+"\t"+ hobby+"\t"+stuIdCard+"\t" ;
+	}
+	public String toPrintFri() {
+//		Tool.printString("姓名\t"+"年龄\t"+"性别\t"+"学号\t"+"电话\t"+"专业\t"+"班级\t"+"爱好\t");
+		return super.getName()+"\t"+super.getAge()+"\t"+super.getSex()+"\t"+super.getId()+"\t"+super.getPhone()+"\t"+major+"\t"+classId+"\t"+hobby+"\t";
+		
+	}
+	
+	
+	
+	
+	
+}
